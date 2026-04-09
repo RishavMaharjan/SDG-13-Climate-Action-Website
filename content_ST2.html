@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renewable Energy Solutions | SDG 13</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+      /* 1. Two-column layout: sticky sidebar + article */
+      .content-layout {
+        display: grid;
+        grid-template-columns: 220px 1fr;
+        gap: 2rem;
+        align-items: start;
+      }
+
+      /* 2. Sticky side navigation */
+      .side-nav {
+        position: sticky;
+        top: 90px;
+        background: #ede8e0;
+        border-left: 4px solid #2d6a4f;
+        padding: 1.5rem;
+        border-radius: 8px;
+      }
+
+      .side-nav h2 {
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: #52796f;
+        margin-bottom: 1rem;
+      }
+
+      .side-nav ol {
+        list-style: none;
+        padding: 0;
+      }
+
+      .side-nav ol li {
+        margin-bottom: 0.5rem;
+      }
+
+      .side-nav ol li a {
+        color: #2d6a4f;
+        font-size: 0.88rem;
+        display: block;
+        padding: 0.3rem 0.5rem;
+        border-radius: 4px;
+        text-decoration: none;
+        transition: background-color 0.2s, color 0.2s;
+      }
+
+      .side-nav ol li a:hover {
+        background: #2d6a4f;
+        color: #fff;
+      }
+
+      /* 3. Article sections with dividers and scroll offset */
+      .content-article section {
+        margin-bottom: 3.5rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid #c8d5b9;
+        scroll-margin-top: 7.5rem;
+      }
+
+      .content-article section:last-of-type {
+        border-bottom: none;
+      }
+
+      /* 4. Heading hierarchy h2–h6 */
+      .content-article h2 { font-size: 1.8rem; color: #1b4332; margin-bottom: 1rem; }
+      .content-article h3 { font-size: 1.3rem; color: #2d6a4f; margin-bottom: 0.75rem; }
+      .content-article h4 { font-size: 1.05rem; font-weight: 700; color: #2d6a4f; margin: 1rem 0 0.4rem; }
+      .content-article h5 { font-size: 0.9rem; font-weight: 600; color: #52796f; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.25rem; }
+      .content-article h6 { font-size: 0.78rem; color: #888; font-style: italic; margin-bottom: 0.5rem; }
+
+      /* 5. Content images — 16:9, rounded, shadowed */
+      .content-img {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        border-radius: 16px;
+        margin: 1.5rem 0;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .img-caption {
+        font-size: 0.82rem;
+        color: #5c5c5c;
+        text-align: center;
+        margin-top: -1rem;
+        margin-bottom: 1rem;
+        font-style: italic;
+      }
+
+      /* 6. Highlight box */
+      .highlight-box {
+        background: linear-gradient(135deg, #2d6a4f, #52796f);
+        color: #fff;
+        border-radius: 10px;
+        padding: 1.5rem 2rem;
+        margin: 1.5rem 0;
+      }
+
+      .highlight-box h3 { color: #d4a017; font-size: 1rem; margin-bottom: 0.5rem; }
+      .highlight-box p  { color: #ede8e0; margin: 0; font-size: 0.95rem; }
+
+      /* 7. Facts list */
+      .facts-list { list-style: none; padding: 0; }
+
+      .facts-list li {
+        padding: 0.6rem 0 0.6rem 2rem;
+        position: relative;
+        border-bottom: 1px dashed #c8d5b9;
+        font-size: 0.95rem;
+      }
+
+      .facts-list li::before {
+        content: "▸";
+        position: absolute;
+        left: 0.4rem;
+        color: #2d6a4f;
+      }
+
+      /* 8. Go to Top button — fixed, CSS only, no JS */
+      .go-top {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        background: #2d6a4f;
+        color: #fff;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.3rem;
+        text-decoration: none;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        z-index: 500;
+        transition: background 0.2s, transform 0.2s;
+      }
+
+      .go-top:hover {
+        background: #d4a017;
+        color: #1b4332;
+        transform: translateY(-3px);
+      }
+
+      /* Accessibility utility */
+      .sr-only {
+        position: absolute;
+        width: 1px; height: 1px;
+        padding: 0; margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+      }
+
+      /* 9. Responsive — stack on mobile */
+      @media (max-width: 768px) {
+        .content-layout { grid-template-columns: 1fr; }
+        .side-nav { position: static; }
+      }
+    </style>
+  </head>
+
+  <body id="top">
+
+    <header>
+      <div class="header-inner">
+        <a href="home.html" class="site-logo" aria-label="Climate Action SDG 13 - Go to Home">
+          <img src="images/Logo.png" alt="SDG 13 Climate Action logo - green leaf with globe">
+          <div>
+            <span class="site-title">Climate Action</span>
+            <span class="site-subtitle">UN SDG Goal 13</span>
+          </div>
+        </a>
+
+        <nav aria-label="Main navigation">
+          <ul class="nav-list">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="ais.html">Action Simulator</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="profile.html">User Profile</a></li>
+            <li><a href="sitemap.html">Sitemap</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="section-heading">
+        <h1>Renewable Energy Solutions</h1>
+        <p>How switching to clean energy sources is one of the most powerful tools in the fight against climate change — SDG 13.</p>
+      </div>
+
+      <div class="content-layout">
+
+        <!-- Sidebar internal navigation -->
+        <aside class="side-nav" aria-label="Page contents navigation">
+          <h2>Contents</h2>
+          <ol>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#solar">Solar Power</a></li>
+            <li><a href="#wind">Wind Energy</a></li>
+            <li><a href="#hydro">Hydropower</a></li>
+            <li><a href="#geothermal">Geothermal Energy</a></li>
+            <li><a href="#actions">What Students Can Do</a></li>
+          </ol>
+        </aside>
+
+        <article class="content-article">
+          <h2 class="sr-only">Renewable Energy Content</h2>
+
+          <!-- SECTION 1 -->
+          <section id="overview" aria-labelledby="h-overview">
+            <h2 id="h-overview">Overview</h2>
+            <p>
+              Renewable energy comes from sources that are naturally replenished —
+              sunlight, wind, water and geothermal heat. Unlike fossil fuels, these
+              sources produce little to no greenhouse gas emissions, making them
+              central to addressing climate change under SDG 13.
+            </p>
+            <p>
+              The burning of coal, oil and gas accounts for roughly
+              <strong>75% of global greenhouse gas emissions</strong>. Transitioning
+              to renewables is the single largest lever available to keep warming
+              below 1.5&deg;C as set out in the Paris Agreement.
+            </p>
+
+            <!-- IMAGE 1 -->
+            <img
+              src="images/content_intro.jpeg"
+              alt="Aerial view of a solar farm surrounded by green fields representing large-scale clean energy"
+              class="content-img"
+            >
+            <p class="img-caption">Fig 1. A utility-scale solar farm &mdash; clean energy infrastructure expanding worldwide.</p>
+
+            <div class="highlight-box">
+              <h3>Key Fact</h3>
+              <p>Renewables accounted for 30% of global electricity in 2023, with solar PV costs falling 89% since 2010 (IRENA, 2023).</p>
+            </div>
+          </section>
+
+          <!-- SECTION 2 -->
+          <section id="solar" aria-labelledby="h-solar">
+            <h2 id="h-solar">Solar Power</h2>
+            <p>
+              Photovoltaic (PV) panels convert sunlight directly into electricity
+              through the photoelectric effect. They are scalable, silent and
+              produce zero emissions during operation.
+            </p>
+
+            <h3>Advantages and Challenges</h3>
+            <ul class="facts-list">
+              <li><strong>Zero operational emissions</strong> — no air or noise pollution during use.</li>
+              <li><strong>Rapidly falling costs</strong> — now below $0.05/kWh in many regions.</li>
+              <li><strong>Intermittency</strong> — only generates during daylight; requires battery storage.</li>
+              <li><strong>Land use</strong> — large-scale farms require significant space.</li>
+            </ul>
+
+            <!-- IMAGE 2 -->
+            <img
+              src="images/content_solar.jpeg"
+              alt="Blue photovoltaic solar panels installed on a residential rooftop on a sunny day"
+              class="content-img"
+            >
+            <p class="img-caption">Fig 2. Rooftop solar PV allows homes and businesses to generate their own clean electricity.</p>
+
+            <h4>Global Installed Capacity (Top 3, 2023)</h4>
+            <h5>Country Rankings</h5>
+            <ul class="facts-list">
+              <li><strong>China</strong> — 610 GW installed</li>
+              <li><strong>United States</strong> — 140 GW installed</li>
+              <li><strong>Japan</strong> — 84 GW installed</li>
+            </ul>
+            <h6>Source: International Renewable Energy Agency (IRENA), 2023</h6>
+
+            <div class="highlight-box">
+              <h3>Key Fact</h3>
+              <p>Solar PV is now the cheapest source of new electricity generation in history, making it a cornerstone of the climate solution (IEA, 2023).</p>
+            </div>
+          </section>
+
+          <!-- SECTION 3 -->
+          <section id="wind" aria-labelledby="h-wind">
+            <h2 id="h-wind">Wind Energy</h2>
+            <p>
+              Wind turbines convert the kinetic energy of moving air into electricity.
+              With lifecycle emissions of just 7&ndash;15&nbsp;gCO&sup2;/kWh versus
+              820&nbsp;gCO&sup2;/kWh for coal, wind is one of the cleanest energy
+              technologies available.
+            </p>
+
+            <h3>Onshore vs. Offshore</h3>
+            <ul class="facts-list">
+              <li><strong>Onshore wind</strong> is the cheapest form of new electricity in most countries, with minimal land disruption — farmland between turbines remains usable.</li>
+              <li><strong>Offshore wind</strong> captures stronger, more consistent winds but is costlier to install. The UK, Denmark and China are global leaders.</li>
+            </ul>
+
+            <!-- IMAGE 3 -->
+            <img
+              src="images/content_wind.jpeg"
+              alt="Row of white wind turbines in a green agricultural field under a blue sky"
+              class="content-img"
+            >
+            <p class="img-caption">Fig 3. Onshore wind turbines — farmland around the turbines can still be used for crops and grazing.</p>
+
+            <div class="highlight-box">
+              <h3>Key Fact</h3>
+              <p>Global wind capacity exceeded 900 GW in 2023, covering approximately 7% of global electricity demand (IRENA, 2023).</p>
+            </div>
+          </section>
+
+          <!-- SECTION 4 -->
+          <section id="hydro" aria-labelledby="h-hydro">
+            <h2 id="h-hydro">Hydropower</h2>
+            <p>
+              Hydropower is the world's largest renewable electricity source,
+              supplying around <strong>16% of global electricity</strong>. It works
+              by converting the potential energy of water flowing through a dam or
+              river channel into electricity via turbines.
+            </p>
+
+            <!-- IMAGE 4 -->
+            <img
+              src="images/content_hydropower.jpeg"
+              alt="Large concrete hydroelectric dam with water flowing through spillways surrounded by mountains and a reservoir"
+              class="content-img"
+            >
+            <p class="img-caption">Fig 4. A hydroelectric dam and reservoir &mdash; the most established form of renewable electricity generation.</p>
+
+            <h3>Types of Hydropower</h3>
+            <ul class="facts-list">
+              <li><strong>Large-scale dams</strong> — high capacity but significant ecological and community impact.</li>
+              <li><strong>Run-of-river</strong> — diverts river flow with minimal storage and less disruption.</li>
+              <li><strong>Pumped-storage</strong> — acts as a giant battery, storing surplus energy for peak demand.</li>
+              <li><strong>Small-scale (&lt;10 MW)</strong> — ideal for remote communities; Nepal has enormous untapped potential.</li>
+            </ul>
+
+            <div class="highlight-box">
+              <h3>Key Fact</h3>
+              <p>Nepal has an estimated hydropower potential of 83,000 MW but only around 2,000 MW is currently developed — a major opportunity for clean regional energy.</p>
+            </div>
+          </section>
+
+          <!-- SECTION 5 -->
+          <section id="geothermal" aria-labelledby="h-geothermal">
+            <h2 id="h-geothermal">Geothermal Energy</h2>
+            <p>
+              Geothermal energy is the heat from within the Earth. It can be captured
+              from hot water and steam beneath the surface to provide clean,
+              consistent electricity, known as base load power. Unlike solar and wind,
+              it does not depend on weather conditions.
+            </p>
+
+            <img
+              src="images/content_geothermal.jpeg"
+              alt="Geothermal power plant showing steam rising from a volcanic landscape"
+              class="content-img"
+            >
+            <p class="img-caption">Fig 5. A geothermal power plant &mdash; providing continuous base load power from the Earth's interior heat.</p>
+
+            <h3>Geothermal vs. Other Renewables</h3>
+            <h4 class="table-label">Comparison Table</h4>
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Feature</th>
+                  <th>Solar PV</th>
+                  <th>Wind</th>
+                  <th>Geothermal</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>LCOE ($/kWh)</td>
+                  <td>0.05</td>
+                  <td>0.04</td>
+                  <td>0.07</td>
+                </tr>
+                <tr>
+                  <td>Reliability</td>
+                  <td>Intermittent</td>
+                  <td>Intermittent</td>
+                  <td>Base Load</td>
+                </tr>
+                <tr>
+                  <td>Space Required</td>
+                  <td>High</td>
+                  <td>Medium</td>
+                  <td>Low</td>
+                </tr>
+                <tr>
+                  <td>Lifespan (Years)</td>
+                  <td>25-30</td>
+                  <td>20-25</td>
+                  <td>30-50</td>
+                </tr>
+              </tbody>
+            </table>
+            <h5>Capacity factor = percentage of time an installation is producing power.</h5>
+            <h6>Source: International Renewable Energy Agency (IRENA), 2023.</h6>
+
+            <div class="highlight-box">
+              <h3>Key Fact</h3>
+              <p>Iceland generates over 30% of its electricity from geothermal sources, proving its potential as a massive fossil-fuel-free energy provider in volcanic regions.</p>
+            </div>
+            
+            <a href="#top" class="go-top" aria-label="Go to top of page" title="Go to top">&#8679;</a>
+          </section>
+
+          <!-- SECTION 6 -->
+          <section id="actions" aria-labelledby="h-actions">
+            <h2 id="h-actions">What Students Can Do</h2>
+            <p>
+              Individual and collective action by students can meaningfully support
+              the shift to renewable energy and contribute to the goals of SDG 13.
+            </p>
+
+            <h3>High-Impact Actions</h3>
+            <ul class="facts-list">
+              <li><strong>Switch to a green energy tariff</strong> — choose a supplier sourcing 100% renewable electricity.</li>
+              <li><strong>Reduce energy use</strong> — turn off standby devices and enable power-saving modes.</li>
+              <li><strong>Advocate for campus solar</strong> — push your university to install rooftop PV panels.</li>
+              <li><strong>Use public transport or cycle</strong> — transport is the hardest sector to decarbonise.</li>
+              <li><strong>Study green subjects</strong> — every profession needs climate-literate people.</li>
+            </ul>
+
+            <div class="highlight-box">
+              <h3>Key Fact</h3>
+              <p>Transitioning to a green economy could create 24 million new jobs globally by 2030. Clean energy is no longer a trade-off with affordability (IEA, 2023).</p>
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem">
+              <a href="ais.html" class="cta-button">Try the Action Simulator</a>
+            </div>
+          </section>
+
+        </article>
+      </div>
+    </main>
+
+    <!-- Go to Top — position:fixed, pure HTML+CSS, no JavaScript -->
+    <a href="#top" class="go-top" aria-label="Go back to top of page" title="Go to top">&#8679;</a>
+
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-section">
+          <h3>Climate Action</h3>
+          <p>A student group project promoting awareness and action for UN Sustainable Development Goal 13.</p>
+          <span class="sdg-badge" style="margin-top: 1rem">SDG 13</span>
+        </div>
+        <div class="footer-section">
+          <h3>Pages</h3>
+          <a href="home.html">Home</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="ais.html">Action Simulator</a>
+          <a href="feedback.html">Feedback</a>
+          <a href="team.html">Team</a>
+          <a href="profile.html">User Profile</a>
+          <a href="sitemap.html">Sitemap</a>
+        </div>
+        <div class="footer-section">
+          <h3>This page</h3>
+          <p>Student: Rishav Maharjan</p>
+          <a href="pageEditor_ST2.html" target="_blank">Page Editor</a>
+          <a href="validation_ST2.html" target="_blank">Validator</a>
+          <a href="https://www.w3.org/WAI/WCAG21/quickref/" target="_blank" rel="noopener">Accessibility (WCAG 2.1)</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 SDG 13 Climate Action &mdash; University of Westminster 4COSC011W | Web Design &amp; Development | Rishav Maharjan &mdash; Student 2</p>
+      </div>
+    </footer>
+
+  </body>
+</html>

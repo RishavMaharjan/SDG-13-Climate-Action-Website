@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Climate Action</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700;900&family=Source+Sans+3:wght@400;500;600;700&display=swap"
+      rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+      /* Home page overrides - these extend the global style.css for page-specific visual tuning */
+
+      /* Hero section: increased vertical padding makes the banner taller and more impactful on landing */
+      .hero {
+        padding: 4rem 0;
+        min-height: 70vh;
+      }
+
+      /* Wavy green underline on the word 'climate' in the hero h1, adds editorial flair */
+      .hero h1 span {
+        text-decoration: underline wavy var(--teal);
+        text-underline-offset: 8px;
+      }
+
+      /* Stats strip: adds a subtle inset shadow and muted border to visually separate it from the hero */
+      .stat-strip {
+        box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+        border: 1px solid var(--border-muted);
+      }
+
+      /* Staggered card layout: the middle card drops down 1rem to create a dynamic editorial feel */
+      .card-grid .card:nth-child(even) {
+        transform: translateY(1rem);
+      }
+
+      /* CTA section: a custom teal-tinted gradient and dashed border distinguish it from other sections */
+      .cta-section {
+        background: linear-gradient(135deg, rgba(255,255,255,0.4), rgba(151,243,226,0.1));
+        border-style: dashed;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- This section is showing the site logo and the main navigation links at the top of every page -->
+    <header>
+      <div class="header-inner">
+        <a
+          href="home.html"
+          class="site-logo"
+          aria-label="Climate Action SDG 13 - Go to home"
+        >
+          <img src="images/Logo.png" alt="SDG 13 Climate Action logo">
+          <div style="display: flex; flex-direction: column">
+            <span class="site-title">Climate Action</span>
+            <span class="site-subtitle">UN SDG Goal 13</span>
+          </div>
+        </a>
+        <nav aria-label="Main navigation">
+          <ul class="nav-list">
+            <li>
+              <a href="home.html" class="active" aria-current="page">Home</a>
+            </li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="ais.html">Action Impact Simulator</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="profile.html">User Profile</a></li>
+            <li><a href="sitemap.html">Sitemap</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <!-- This section is showing the hero banner with the headline, intro text, and call-to-action buttons -->
+      <section class="hero" aria-label="Welcome banner">
+        <div class="hero-content">
+          <span class="sdg-badge">Sustainable Development Goal 13</span>
+          <h1>Act now for our <span>climate</span></h1>
+          <p>
+            Climate change is the defining challenge of our generation. Together
+            as students, citizens, and future professionals, we have the power to
+            make a real difference. This website is your guide to action.
+          </p>
+          <div class="hero-actions">
+            <a href="#mission-cards" class="btn btn-hero">Explore Actions</a>
+            <a href="content_ST1.html" class="btn btn-outline"
+              >Learn the Science</a
+            >
+          </div>
+        </div>
+        <div class="hero-image">
+          <div class="hero-image-inner">
+            <img
+              src="images/hero-bg.jpg"
+              alt="A retreating mountain glacier surrounded by rocky terrain and conifer forest, showing signs of glacial melt">
+          </div>
+          <div class="hero-image-blur"></div>
+        </div>
+      </section>
+
+      <!-- This section is showing three key climate statistics: temperature rise, CO2 levels, and people at risk -->
+      <section class="stat-strip" aria-label="Key Climate statistics">
+        <div class="stat-item">
+          <strong>1.1&deg;C</strong>
+          <small>Global temperature rise above pre-industrial levels</small>
+        </div>
+        <div class="stat-item">
+          <strong>420 ppm</strong>
+          <small>CO&sup2; concentration highest in 3 million years</small>
+        </div>
+        <div class="stat-item">
+          <strong>3.6B</strong>
+          <small>People highly vulnerable to climate impacts right now</small>
+        </div>
+      </section>
+
+      <!-- This section is showing three mission cards explaining the climate crisis, student actions, and a hopeful future -->
+      <section id="mission-cards" aria-labelledby="mission-heading">
+        <div class="section-heading">
+          <h2 id="mission-heading">Why Climate Action Matters</h2>
+        </div>
+
+        <div class="card-grid">
+          <article class="card" aria-label="The Crisis Card">
+            <div class="card-img-wrapper">
+              <img
+                src="images/card-crisis.jpg"
+                alt="Aerial photograph of a dried-up river bed showing the severe impact of drought on landscapes">
+            </div>
+            <span class="card-label">The Threat</span>
+            <h3>The Crisis is Real</h3>
+            <p>Climate change is no longer a future threat. Rising seas,
+              extreme weather, and collapsing ecosystems are happening right
+              now. Students and young people will inherit consequences of
+              today's decisions.
+            </p>
+            <p class="img-caption">
+              Fig 4. Community allotments and urban growing projects reduce
+              food miles, promote biodiversity, and strengthen local
+              connections, all key aspects of grassroots climate resilience.
+            </p>
+            <ul>
+              <li>Extreme weather events have doubled since 2000</li>
+              <li>Sea levels rising 3.7mm per year and accelerating</li>
+              <li>1 million species at risk of extinction</li>
+            </ul>
+          </article>
+
+          <article class="card" aria-label="Students can act card">
+            <div class="card-img-wrapper">
+              <img
+                src="images/card-students.jpg"
+                alt="University students working together on an environmental project outdoors">
+            </div>
+            <span class="card-label">Action</span>
+            <h3>Students Can Drive Change</h3>
+            <p>
+              You don't need to be a politician or scientist to make a
+              meaningful impact. As a student, you have access to communities,
+              knowledge, and platforms that can amplify climate action in
+              powerful ways.
+            </p>
+            <ul>
+              <li>Switch to a plant-rich diet 3+ days a week</li>
+              <li>Join or start a sustainability group on campus</li>
+              <li>Use public transport or cycle instead of driving</li>
+            </ul>
+          </article>
+
+          <article class="card" aria-label="Outcomes Card">
+            <div class="card-img-wrapper">
+              <img
+                src="images/card-future.jpg"
+                alt="Renewable energy wind turbines and solar panels in a green field at sunset">
+            </div>
+            <span class="card-label">Solutions</span>
+            <h3>A Better Future is Possible</h3>
+            <p>
+              If individuals, communities and nations act together, we can limit
+              warming to 1.5&deg;C and build a fairer, cleaner world. Every
+              action, no matter how small, contributes to this shared outcome.
+            </p>
+            <ul>
+              <li>Clean energy could power 90% of the world by 2050</li>
+              <li>Green jobs could reach 24 million globally by 2030</li>
+              <li>Restoring forests could absorb 10% of annual emissions</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- This section is showing a thumbnail gallery linking to all four student content pages -->
+      <section id="content-gallery" aria-labelledby="gallery-heading">
+        <div class="gallery-section-heading">
+          <h2 id="gallery-heading">Explore Our Topics</h2>
+        </div>
+
+        <div class="content-gallery">
+          <a
+            href="content_ST1.html"
+            class="gallery-tile"
+            aria-label="Read about Climate science explained"
+          >
+            <img
+              src="images/title-kosish.jpg"
+              class="gallery-tile-img"
+              alt="Climate Science Explained">
+            <strong>Climate Science Explained</strong>
+            <span>Research & Data</span>
+          </a>
+
+          <a
+            href="content_ST2.html"
+            class="gallery-tile"
+            aria-label="Read about renewable energy solutions"
+          >
+            <img
+              src="images/title-rishav.jpg"
+              class="gallery-tile-img"
+              alt="Renewable Energy Solutions">
+            <strong>Renewable Energy Solutions</strong>
+            <span>Energy Transition</span>
+          </a>
+
+          <a
+            href="content_ST3.html"
+            class="gallery-tile"
+            aria-label="Read about community and grassroots actions"
+          >
+            <img
+              src="images/title-roshan.jpg"
+              class="gallery-tile-img"
+              alt="Community Grassroots Action">
+            <strong>Community Grassroots Action</strong>
+            <span>Local Impact</span>
+          </a>
+
+          <a
+            href="content_ST4.html"
+            class="gallery-tile"
+            aria-label="Read about climate policy"
+          >
+            <img
+              src="images/title-vishank.jpg"
+              class="gallery-tile-img"
+              alt="Climate Policy And You">
+            <strong>Climate Policy And You</strong>
+            <span>Legislation</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- This section is showing the call-to-action prompt to launch the interactive impact simulator -->
+      <section class="cta-section" aria-label="Call to action">
+        <h2>Ready to measure your impact?</h2>
+        <p>
+          Use our Interactive Action Impact Simulator to choose climate actions
+          and see how much of a difference your choices could make.
+        </p>
+        <a href="ais.html" class="btn btn-hero">Launch the Simulator</a>
+      </section>
+    </main>
+
+    <!-- This section is showing the site footer with links, student attribution, and copyright notice -->
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-section">
+          <h3>Climate Action</h3>
+          <p>
+            A student group project promoting awareness and action for UN
+            Sustainable Development Goal 13 - Climate Action.
+          </p>
+          <span class="sdg-badge" style="margin-top: 1rem">SDG 13</span>
+        </div>
+        <div class="footer-section">
+          <h3>Pages</h3>
+          <a href="home.html">Home</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="ais.html">Action Impact Simulator</a>
+          <a href="feedback.html">Feedback</a>
+          <a href="team.html">Team</a>
+          <a href="profile.html">User Profile</a>
+          <a href="sitemap.html">Sitemap</a>
+        </div>
+        <div class="footer-section">
+          <h3>This page</h3>
+          <p>Student: Kosish Adhikari</p>
+          <a href="pageEditor_ST1.html" target="_blank">Page Editor</a>
+          <a href="validation_ST1.html" target="_blank">Validator</a>
+          <a
+            href="https://www.w3.org/WAI/WCAG21/quickref/"
+            target="_blank"
+            rel="noopener"
+            >Accessibility (WCAG 2.1)</a
+          >
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          &copy; 2026 SDG 13 Climate Action - University of Westminster
+          4COSC011W | Web design & Development | Kosish - Student 1
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
